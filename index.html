@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Idiomas Puentes | La Iglesia equipando a la Iglesia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0A1628',
+              navyCard: '#13233D',
+              navyDark: '#070F1C',
+              blueHeader: '#172554',
+              blueBtn: '#1E3A8A',
+              blueHover: '#1E40AF',
+              terracotta: '#B35438',
+              terracottaHover: '#96432B',
+              terracottaDark: '#8B4513',
+              terracottaLight: '#D97757',
+              sand: '#FAF7F2',
+              ivory: '#FCFBF9',
+              bone: '#F7F5F0',
+              warmBorder: '#EFECE6'
+            }
+          },
+          fontFamily: {
+            serif: ['Lora', 'ui-serif', 'Georgia', 'Cambria', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom refined animations & accents */
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .hero-mesh {
+      background-color: #0A1628;
+      background-image: 
+        radial-gradient(at 15% 25%, rgba(179, 84, 56, 0.18) 0px, transparent 55%),
+        radial-gradient(at 85% 75%, rgba(30, 58, 138, 0.35) 0px, transparent 60%),
+        radial-gradient(at 50% 50%, rgba(10, 22, 40, 1) 0px, transparent 100%);
+    }
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px -10px rgba(10, 22, 40, 0.08);
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-700 bg-brand-ivory antialiased selection:bg-brand-terracotta selection:text-white">
+
+  <!-- ========================================================================= -->
+  <!-- 0. MODERN FLOATING NAVIGATION BAR                                         -->
+  <!-- ========================================================================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="mainHeader">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-3">
+      <nav class="glass-nav border border-gray-200/80 rounded-2xl shadow-sm px-5 py-3.5 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-terracotta rounded-lg">
+          <img src="https://idiomaspuentes.org/_astro/LogoIp.C-UIEVDp_COJ73.webp" 
+               alt="logo Idiomas Puentes" 
+               class="h-8 md:h-9 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+               onerror="this.onerror=null; this.src='https://idiomaspuentes.org/_astro/logo-id-blanco.pUxQ_d_a_Z2lh9tR.svg'; this.style.filter='invert(1) brightness(0.2)';">
+        </a>
+
+        <!-- Desktop Nav Items -->
+        <div class="hidden lg:flex items-center gap-1.5 xl:gap-2">
+          <a href="/" class="px-4 py-2 rounded-xl text-sm font-semibold bg-brand-blueBtn text-white shadow-sm transition-all">Inicio</a>
+          <a href="/Nosotros" class="px-3.5 py-2 rounded-xl text-sm font-medium text-gray-700 hover:text-brand-blueHeader hover:bg-gray-100/70 transition-all">Nosotros</a>
+          <a href="/Proyectos" class="px-3.5 py-2 rounded-xl text-sm font-medium text-gray-700 hover:text-brand-blueHeader hover:bg-gray-100/70 transition-all">Proyectos</a>
+          <a href="/Historias" class="px-3.5 py-2 rounded-xl text-sm font-medium text-gray-700 hover:text-brand-blueHeader hover:bg-gray-100/70 transition-all">Historias</a>
+          <a href="/Recursos" class="px-3.5 py-2 rounded-xl text-sm font-medium text-gray-700 hover:text-brand-blueHeader hover:bg-gray-100/70 transition-all">Recursos</a>
+          <a href="/Involucrate" class="px-3.5 py-2 rounded-xl text-sm font-medium text-gray-700 hover:text-brand-blueHeader hover:bg-gray-100/70 transition-all">Involúcrate</a>
+          <a href="/Contacto" class="px-3.5 py-2 rounded-xl text-sm font-medium text-gray-700 hover:text-brand-blueHeader hover:bg-gray-100/70 transition-all">Contacto</a>
+        </div>
+
+        <!-- Action / Donate Button -->
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="#" class="inline-flex items-center gap-2 bg-brand-terracotta hover:bg-brand-terracottaHover text-white text-sm font-semibold py-2.5 px-5 rounded-xl shadow-sm hover:shadow transition-all duration-200 transform hover:-translate-y-0.5">
+            <i data-lucide="hand-helping" class="w-4 h-4"></i>
+            <span>Donar</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" aria-label="Abrir menú" class="lg:hidden p-2 rounded-xl text-gray-700 hover:bg-gray-100 focus:outline-none">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Mobile Drawer Dropdown -->
+    <div id="mobileMenu" class="hidden lg:hidden max-w-7xl mx-auto px-4 mt-2">
+      <div class="bg-white/95 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-xl p-5 space-y-2">
+        <a href="/" class="block px-4 py-2.5 rounded-xl text-sm font-semibold bg-brand-blueBtn text-white">Inicio</a>
+        <a href="/Nosotros" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 hover:bg-gray-50">Nosotros</a>
+        <a href="/Proyectos" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 hover:bg-gray-50">Proyectos</a>
+        <a href="/Historias" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 hover:bg-gray-50">Historias</a>
+        <a href="/Recursos" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 hover:bg-gray-50">Recursos</a>
+        <a href="/Involucrate" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 hover:bg-gray-50">Involúcrate</a>
+        <a href="/Contacto" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 hover:bg-gray-50">Contacto</a>
+        <div class="pt-2 border-t border-gray-100">
+          <a href="#" class="w-full flex items-center justify-center gap-2 bg-brand-terracotta hover:bg-brand-terracottaHover text-white font-medium py-3 px-5 rounded-xl text-sm shadow-sm">
+            <i data-lucide="hand-helping" class="w-4 h-4"></i>
+            <span>Donar</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ========================================================================= -->
+  <!-- 1. HERO SECTION: MAJESTIC EDITORIAL DUAL-PANE                             -->
+  <!-- ========================================================================= -->
+  <section class="hero-mesh min-h-[92vh] pt-32 pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden flex items-center">
+    <!-- Subtle Grid overlay pattern -->
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px); background-size: 64px 64px;"></div>
+
+    <div class="max-w-7xl mx-auto w-full relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left Content Column -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <!-- Tag / Pill -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-brand-terracottaLight text-xs font-semibold uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-brand-terracotta animate-pulse"></span>
+            Misión & Traducción Bíblica
+          </div>
+
+          <!-- Main Headline (Exact Copy) -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight leading-[1.12]">
+            La Iglesia equipando a la Iglesia
+          </h1>
+
+          <!-- Body Text (Exact Copy) -->
+          <p class="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            Trabajamos juntos como un solo cuerpo, respondiendo al llamado de Dios de 
+            <strong class="text-brand-terracottaLight font-semibold">amar y servir a la iglesia tribal.</strong> 
+            Los equipamos con todo lo necesario para que sean capaces de traducir las Escrituras al idioma de su corazón y que sus vidas sean transformadas a medida que entienden la Palabra de Dios.
+          </p>
+
+          <!-- CTAs (Exact copy & destinations) -->
+          <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a href="/Proyectos" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white hover:bg-gray-100 text-brand-navy font-semibold py-3.5 px-7 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 group">
+              <span>Nuestros Proyectos</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+            </a>
+            <a href="/Involucrate" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-brand-terracotta hover:bg-brand-terracottaHover text-white font-semibold py-3.5 px-7 rounded-xl shadow-lg hover:shadow-brand-terracotta/30 transition-all duration-200 group">
+              <span>Involúcrate</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+            </a>
+          </div>
+
+          <!-- Mini trust badge / metric indicator -->
+          <div class="pt-6 border-t border-white/10 flex items-center justify-center lg:justify-start gap-8 text-xs text-gray-400">
+            <div class="flex items-center gap-2">
+              <i data-lucide="globe" class="w-4 h-4 text-brand-terracottaLight"></i>
+              <span>Comunidades Indígenas en Latinoamérica</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="book-marked" class="w-4 h-4 text-brand-terracottaLight"></i>
+              <span>Herramientas de Licencia Abierta</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual Showcase Column -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <!-- Ambient Glow -->
+            <div class="absolute -inset-1.5 bg-gradient-to-tr from-brand-terracotta to-blue-600 rounded-3xl blur-2xl opacity-30"></div>
+            
+            <!-- Glass card container -->
+            <div class="relative rounded-3xl border border-white/15 bg-brand-navyCard/80 p-3 sm:p-4 backdrop-blur-md shadow-2xl overflow-hidden">
+              <img src="https://idiomaspuentes.org/_astro/imagenPrincipal2.DOZWQj_Q_Z8MjFg.webp" 
+                   alt="Traducción bíblica en comunidad tribal" 
+                   class="w-full h-[380px] sm:h-[430px] object-cover rounded-2xl shadow-inner"
+                   onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80';">
+              
+              <!-- Floating info tag -->
+              <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-brand-navy/90 backdrop-blur-md border border-white/10 text-white flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-brand-terracotta/20 border border-brand-terracotta/40 flex items-center justify-center shrink-0">
+                  <i data-lucide="book-open" class="w-5 h-5 text-brand-terracottaLight"></i>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold text-brand-terracottaLight uppercase tracking-wider">Traducción de las Escrituras</p>
+                  <p class="text-xs text-gray-300">En el idioma del corazón de cada pueblo</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 2. BIBLICAL FOUNDATION SECTION: SCRIPTURE CARDS                           -->
+  <!-- ========================================================================= -->
+  <section class="bg-brand-sand py-20 px-4 sm:px-6 lg:px-8 relative border-b border-brand-warmBorder">
+    <div class="max-w-6xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-gray-900 tracking-tight mb-4">
+          Siguiendo el Ejemplo de la Iglesia Primitiva
+        </h2>
+        <div class="w-16 h-1 bg-brand-terracotta mx-auto mb-6 rounded-full"></div>
+        <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+          Así como la iglesia primitiva fue movida por la gracia de Dios para apoyarse y fortalecerse mutuamente a través de fronteras culturales y geográficas, la iglesia global de hoy continúa este patrón divino. A través del ánimo mutuo, el compartir de recursos y el ministerio colaborativo, somos testigos del amor de Dios unificando a su pueblo en la misión de hacer su palabra accesible para todos.
+        </p>
+      </div>
+
+      <!-- Two Scripture Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Scripture Card 1: 2 Corintios -->
+        <div class="bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-gray-200/80 relative overflow-hidden card-hover flex flex-col justify-between">
+          <div class="absolute top-0 left-0 bottom-0 w-2 bg-brand-blueBtn"></div>
+          <div>
+            <span class="text-brand-blueBtn/20 font-serif text-6xl leading-none select-none block -mt-2 mb-2">“</span>
+            <blockquote class="text-gray-800 text-base sm:text-lg font-serif italic leading-relaxed mb-6">
+              "Ahora, hermanos, queremos que se enteren de la gracia que Dios ha dado a las iglesias de Macedonia. En medio de las pruebas más difíciles, su desbordante alegría y su extrema pobreza abundaron en rica generosidad."
+            </blockquote>
+          </div>
+          <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+            <span class="text-brand-blueBtn font-bold text-sm tracking-wide">2 Corintios 8:1-2</span>
+            <i data-lucide="book-marked" class="w-4 h-4 text-brand-blueBtn/60"></i>
+          </div>
+        </div>
+
+        <!-- Scripture Card 2: Hechos -->
+        <div class="bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-gray-200/80 relative overflow-hidden card-hover flex flex-col justify-between">
+          <div class="absolute top-0 left-0 bottom-0 w-2 bg-brand-terracotta"></div>
+          <div>
+            <span class="text-brand-terracotta/20 font-serif text-6xl leading-none select-none block -mt-2 mb-2">“</span>
+            <blockquote class="text-gray-800 text-base sm:text-lg font-serif italic leading-relaxed mb-6">
+              "Así que los creyentes de Antioquía decidieron enviar una ayuda a los hermanos de Judea, y cada uno dio lo que podía. Así lo hicieron, y confiaron sus ofrendas a Bernabé y a Saulo para que las llevaran a los ancianos de la iglesia de Jerusalén."
+            </blockquote>
+          </div>
+          <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+            <span class="text-brand-terracotta font-bold text-sm tracking-wide">Hechos 11:29</span>
+            <i data-lucide="book-marked" class="w-4 h-4 text-brand-terracotta/60"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 3. MISSION SECTION ("NUESTRA MISIÓN")                                     -->
+  <!-- ========================================================================= -->
+  <section class="bg-brand-ivory py-24 px-4 sm:px-6 lg:px-8 relative">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Eyebrow & Headline -->
+      <div class="max-w-3xl mb-16">
+        <div class="inline-flex items-center gap-2 text-brand-terracotta text-xs font-bold tracking-widest uppercase mb-3">
+          <i data-lucide="flag" class="w-4 h-4"></i>
+          <span>Nuestra Misión</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-brand-blueHeader leading-tight mb-5">
+          Equipamos a pueblos indígenas bilingües para que ellos mismos traduzcan la Palabra de Dios.
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Desde el español o el portugués hacia sus lenguas maternas, fortaleciendo el liderazgo local con autonomía y rigor bíblico.
+        </p>
+      </div>
+
+      <!-- 3 Pillar Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Pillar 1 -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200/80 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-sand border border-orange-100 flex items-center justify-center text-brand-terracotta mb-6 shadow-sm">
+              <i data-lucide="book-open" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-brand-blueHeader mb-3">
+              Facilitamos y proveemos recursos
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+              Producimos recursos y herramientas para capacitar y guiar a los traductores de Otras Lenguas, a traducir, completar y comprobar la traducción de las Escrituras en el idioma de su corazón.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 flex items-center gap-2 text-xs font-semibold text-brand-terracotta">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-terracotta"></span>
+            <span>Recursos Abiertos</span>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200/80 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-sand border border-orange-100 flex items-center justify-center text-brand-terracotta mb-6 shadow-sm">
+              <i data-lucide="users" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-brand-blueHeader mb-3">
+              Ofrecemos asesoría y entrenamiento
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+              Brindamos capacitación a traductores de Otras Lenguas, sobre el proceso de traducción y el uso de las herramientas para que puedan realizar un trabajo de calidad y con excelencia.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 flex items-center gap-2 text-xs font-semibold text-brand-terracotta">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-terracotta"></span>
+            <span>Capacitación Continua</span>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200/80 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-sand border border-orange-100 flex items-center justify-center text-brand-terracotta mb-6 shadow-sm">
+              <i data-lucide="compass" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-brand-blueHeader mb-3">
+              Acompañamos a las iglesias nativas
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+              Proveemos apoyo y soporte continuo a las iglesias nativas para que puedan realizar el trabajo de traducción de manera constante y sin largos retrasos.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 flex items-center gap-2 text-xs font-semibold text-brand-terracotta">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-terracotta"></span>
+            <span>Soporte Ininterrumpido</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Action Button -->
+      <div class="mt-12 text-center md:text-left">
+        <a href="/Nosotros" class="inline-flex items-center gap-3 bg-brand-terracotta hover:bg-brand-terracottaHover text-white font-semibold py-4 px-8 rounded-xl shadow-md hover:shadow-lg transition-all group">
+          <span>Conoce más</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 4. PROJECTS SECTION ("NUESTROS PROYECTOS")                                -->
+  <!-- ========================================================================= -->
+  <section class="bg-brand-bone py-24 px-4 sm:px-6 lg:px-8 border-t border-b border-brand-warmBorder">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Header row with view all button -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div class="max-w-2xl">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-brand-blueHeader mb-4">
+            Nuestros Proyectos
+          </h2>
+          <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+            Traducimos al español y portugués recursos bíblicos diseñados para garantizar que la Palabra de Dios sea traducida con fidelidad, claridad y precisión.
+          </p>
+        </div>
+        <div>
+          <a href="/Proyectos" class="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-brand-blueHeader text-sm font-semibold py-3 px-6 rounded-xl border border-gray-200 shadow-sm transition-all group">
+            <span>Ver Todos los Proyectos</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Project Card 1: Idioma puente español -->
+        <div class="bg-white rounded-2xl p-8 sm:p-10 border border-gray-200/80 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <!-- Badge & Progress Pill -->
+            <div class="flex items-center justify-between gap-4 mb-6">
+              <span class="text-xs font-bold tracking-wider uppercase text-gray-400">Progreso Actual</span>
+              <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-orange-50 text-brand-terracotta border border-orange-100 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-brand-terracotta"></span>
+                9% Activo
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-serif font-bold text-brand-blueHeader mb-4">
+              Traducción al idioma puente español
+            </h3>
+
+            <!-- Progress bar -->
+            <div class="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden mb-6">
+              <div class="bg-brand-terracotta h-2.5 rounded-full transition-all duration-1000" style="width: 9%"></div>
+            </div>
+
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Una iniciativa que traduce paquetes de recursos de traducción para cada libro de la Biblia, destinada a abrir nuevas puertas al acceso de la Palabra de Dios para más de <strong class="text-gray-900 font-semibold">55 millones de personas indígenas</strong> en Latinoamérica.
+            </p>
+
+            <!-- Stats Box -->
+            <div class="grid grid-cols-2 gap-4 bg-brand-sand rounded-xl p-4 mb-6 border border-orange-100/50">
+              <div>
+                <span class="text-[11px] font-bold tracking-wider uppercase text-gray-500 block mb-1">Meta</span>
+                <span class="text-sm font-semibold text-gray-900">66 Libros Canónicos</span>
+              </div>
+              <div>
+                <span class="text-[11px] font-bold tracking-wider uppercase text-gray-500 block mb-1">Alcance</span>
+                <span class="text-sm font-semibold text-gray-900">Toda Hispanoamérica</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="/Proyectos" class="inline-flex items-center gap-2 text-brand-terracotta font-semibold text-sm hover:text-brand-terracottaHover group">
+            <span>Conoce más sobre este proyecto</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+          </a>
+        </div>
+
+        <!-- Project Card 2: Historias Bíblicas Abiertas -->
+        <div class="bg-white rounded-2xl p-8 sm:p-10 border border-gray-200/80 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <!-- Badge & Progress Pill -->
+            <div class="flex items-center justify-between gap-4 mb-6">
+              <span class="text-xs font-bold tracking-wider uppercase text-gray-400">Completado</span>
+              <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-blue-50 text-brand-blueBtn border border-blue-100 flex items-center gap-1.5">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-brand-blueBtn"></i>
+                100% Finalizado
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-serif font-bold text-brand-blueHeader mb-4">
+              Historias Bíblicas Abiertas en español
+            </h3>
+
+            <!-- Progress bar -->
+            <div class="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden mb-6">
+              <div class="bg-brand-blueBtn h-2.5 rounded-full" style="width: 100%"></div>
+            </div>
+
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Este recurso reúne 50 relatos claves de la Biblia, desde la creación hasta el Apocalipsis, y ya está en manos de <strong class="text-gray-900 font-semibold">dos comunidades indígenas de Latinoamérica</strong> como herramienta para la evangelización y el discipulado integral.
+            </p>
+
+            <!-- Stats Box -->
+            <div class="grid grid-cols-2 gap-4 bg-brand-sand rounded-xl p-4 mb-6 border border-blue-100/50">
+              <div>
+                <span class="text-[11px] font-bold tracking-wider uppercase text-gray-500 block mb-1">Estado</span>
+                <span class="text-sm font-semibold text-gray-900">Distribuido en Campo</span>
+              </div>
+              <div>
+                <span class="text-[11px] font-bold tracking-wider uppercase text-gray-500 block mb-1">Formato</span>
+                <span class="text-sm font-semibold text-gray-900">Audio · Texto Impreso</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="/Proyectos#historias-biblicas-abiertas" class="inline-flex items-center gap-2 text-brand-blueBtn font-semibold text-sm hover:text-brand-blueHover group">
+            <span>Conoce más sobre este proyecto</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 5. DEMOGRAPHIC NEEDS ("ÁREAS DE NECESIDAD")                               -->
+  <!-- ========================================================================= -->
+  <section class="bg-brand-ivory py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="max-w-3xl mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-brand-blueHeader mb-4">
+          Áreas de Necesidad
+        </h2>
+        <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+          Estas son las regiones de Latinoamérica y el mundo donde trabajamos para llevar la Palabra de Dios a idiomas aún sin traducción bíblica.
+        </p>
+      </div>
+
+      <!-- 4 Bento Grid Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl p-7 border border-gray-200/80 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-bold tracking-wider uppercase text-gray-400">Hispanoamérica</span>
+              <div class="w-8 h-8 rounded-lg bg-blue-50 text-brand-blueBtn flex items-center justify-center">
+                <i data-lucide="globe" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <div class="text-4xl font-extrabold text-brand-blueHeader mb-3">92,5%</div>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              de la población indígena en países hispanohablantes <strong class="text-gray-800 font-semibold">hablan español.</strong>
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100">
+            <a href="https://cvc.cervantes.es/lengua/anuario/anuario_24/el_espanol_en_el_mundo_anuario_instituto_cervantes_2024.pdf" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-400 hover:text-brand-terracotta inline-flex items-center gap-1">
+              <span>Fuente: Anuario Instituto Cervantes, 2024</span>
+              <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl p-7 border border-gray-200/80 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-bold tracking-wider uppercase text-gray-400">Bilingüismo</span>
+              <div class="w-8 h-8 rounded-lg bg-orange-50 text-brand-terracotta flex items-center justify-center">
+                <i data-lucide="users" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <div class="text-4xl font-extrabold text-brand-terracotta mb-3">60%</div>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              de la población indígena <strong class="text-gray-800 font-semibold">hablan español y su idioma nativo de manera fluida.</strong>
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100">
+            <a href="https://redatam.org/redatam/pryesp/sisppi/Docs/Informacion_SISPPI.pdf" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-400 hover:text-brand-terracotta inline-flex items-center gap-1">
+              <span>Fuente: SISPPI, CELADE</span>
+              <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl p-7 border border-gray-200/80 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-bold tracking-wider uppercase text-gray-400">Brasil</span>
+              <div class="w-8 h-8 rounded-lg bg-blue-50 text-brand-blueBtn flex items-center justify-center">
+                <i data-lucide="map-pin" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <div class="text-4xl font-extrabold text-brand-blueHeader mb-3">76,9%</div>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              de la población indígena de Brasil mayores de 5 años <strong class="text-gray-800 font-semibold">hablan portugués.</strong>
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100">
+            <span class="text-xs text-gray-400">Fuente: IWGIA</span>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white rounded-2xl p-7 border border-gray-200/80 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-bold tracking-wider uppercase text-gray-400">PALOP & África</span>
+              <div class="w-8 h-8 rounded-lg bg-orange-50 text-brand-terracotta flex items-center justify-center">
+                <i data-lucide="compass" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <div class="text-4xl font-extrabold text-brand-blueHeader mb-3">119</div>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              <strong class="text-gray-800 font-semibold">lenguas indígenas vivas</strong> en la Comunidad de países de lengua oficial portuguesa (PALOP).
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100">
+            <span class="text-xs text-gray-400">Fuente: Ethnologue</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Action Button -->
+      <div class="text-center">
+        <a href="/Proyectos" class="inline-flex items-center gap-3 bg-brand-blueBtn hover:bg-brand-blueHover text-white font-semibold py-4 px-8 rounded-xl shadow-md hover:shadow-lg transition-all group">
+          <span>Ver Todos los Proyectos</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 6. GLOBAL IMPACT SECTION ("NUESTRO IMPACTO GLOBAL")                       -->
+  <!-- ========================================================================= -->
+  <section class="bg-brand-bone py-24 px-4 sm:px-6 lg:px-8 border-t border-b border-brand-warmBorder">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Eyebrow -->
+      <div class="mb-6">
+        <span class="text-brand-terracotta font-serif font-bold text-2xl sm:text-3xl block">
+          Nuestro Impacto Global
+        </span>
+      </div>
+
+      <!-- Immersive Dark Feature Box -->
+      <div class="bg-brand-navy rounded-3xl p-8 sm:p-12 lg:p-16 shadow-2xl relative overflow-hidden border border-white/10">
+        <!-- Background decorative ambient blur -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-terracotta/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-900/30 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left Column -->
+          <div class="lg:col-span-5 space-y-6">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight">
+              Alcance del trabajo que Dios ha puesto en nuestras manos
+            </h2>
+            <p class="text-base sm:text-lg text-gray-300 leading-relaxed">
+              Colaboramos con iglesias locales en más de 45 países, proveyendo herramientas para que las comunidades sean las protagonistas de su propia traducción bíblica.
+            </p>
+            <div class="pt-2">
+              <a href="/Involucrate" class="inline-flex items-center gap-2.5 bg-brand-terracotta hover:bg-brand-terracottaHover text-white font-semibold py-3.5 px-7 rounded-xl shadow-md transition-all group">
+                <i data-lucide="heart" class="w-4 h-4 text-white"></i>
+                <span>Sé parte de este impacto</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Metrics 2x2 Grid -->
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+            
+            <!-- Metric 1 -->
+            <div class="bg-brand-navyCard/90 border border-white/10 rounded-2xl p-6 backdrop-blur-sm card-hover">
+              <div class="text-4xl sm:text-5xl font-extrabold text-brand-terracottaLight mb-2">11</div>
+              <h4 class="text-base font-bold text-white mb-2">Proyectos en progreso</h4>
+              <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                3 al idioma puente español, 1 al portugués y 7 en lenguas indígenas vivas.
+              </p>
+            </div>
+
+            <!-- Metric 2 -->
+            <div class="bg-brand-navyCard/90 border border-white/10 rounded-2xl p-6 backdrop-blur-sm card-hover">
+              <div class="text-4xl sm:text-5xl font-extrabold text-brand-terracottaLight mb-2">10</div>
+              <h4 class="text-base font-bold text-white mb-2">Comunidades capacitadas</h4>
+              <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                Han culminado con éxito la capacitación inicial en software y recursos exegéticos.
+              </p>
+            </div>
+
+            <!-- Metric 3 -->
+            <div class="bg-brand-navyCard/90 border border-white/10 rounded-2xl p-6 backdrop-blur-sm card-hover">
+              <div class="text-4xl sm:text-5xl font-extrabold text-brand-terracottaLight mb-2">3</div>
+              <h4 class="text-base font-bold text-white mb-2">Países con acceso</h4>
+              <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                Entrada formal activa en comunidades de 3 naciones latinoamericanas.
+              </p>
+            </div>
+
+            <!-- Metric 4 -->
+            <div class="bg-brand-navyCard/90 border border-white/10 rounded-2xl p-6 backdrop-blur-sm card-hover">
+              <div class="text-4xl sm:text-5xl font-extrabold text-brand-terracottaLight mb-2">5</div>
+              <h4 class="text-base font-bold text-white mb-2">Comunidades beneficiadas</h4>
+              <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                Recibiendo porciones traducidas y materiales de discipulado directo.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 7. IMPACT STORIES ("HISTORIAS DE IMPACTO")                                -->
+  <!-- ========================================================================= -->
+  <section class="bg-brand-ivory py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Header row -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div class="max-w-2xl">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-brand-blueHeader mb-4">
+            Historias de Impacto
+          </h2>
+          <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+            Descubre cómo la Palabra de Dios está transformando vidas y comunidades a medida que se clarifica en sus lenguas nativas.
+          </p>
+        </div>
+        <div>
+          <a href="/Historias" class="inline-flex items-center gap-2 text-brand-blueBtn hover:text-brand-terracotta font-semibold text-sm transition-all group">
+            <span>Ver todos los testimonios</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3 Story Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        
+        <!-- Story 1: Armando -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm card-hover flex flex-col justify-between">
+          <div class="relative h-60 overflow-hidden bg-gray-100">
+            <img src="https://idiomaspuentes.org/_astro/Armando3.C5iXZfsg_ZT9rCs.webp" 
+                 alt="Armando" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80';">
+            <span class="absolute top-4 left-4 bg-brand-terracotta text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+              Amazonía
+            </span>
+          </div>
+          <div class="p-7 flex-1 flex flex-col justify-between">
+            <blockquote class="text-sm sm:text-base text-gray-700 leading-relaxed italic mb-6">
+              "Para Armando, la traducción puede ser muy desafiante; algunas veces se encuentra con palabras o frases difíciles de verter a su propia lengua. Los recursos puente le han permitido superar obstáculos culturales."
+            </blockquote>
+            <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+              <div>
+                <p class="font-bold text-brand-blueHeader text-base">Armando</p>
+                <p class="text-xs text-gray-400">Traductor Indígena</p>
+              </div>
+              <a href="/Historias#Armando" aria-label="Leer historia de Armando" class="w-9 h-9 rounded-full bg-brand-sand hover:bg-brand-terracotta hover:text-white text-brand-blueHeader flex items-center justify-center transition-all">
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 2: Omar -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm card-hover flex flex-col justify-between">
+          <div class="relative h-60 overflow-hidden bg-gray-100">
+            <img src="https://idiomaspuentes.org/_astro/Omar1.Q_okTJEJ_Z1EAznm.webp" 
+                 alt="Omar" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80';">
+            <span class="absolute top-4 left-4 bg-brand-terracotta text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+              Amazonía
+            </span>
+          </div>
+          <div class="p-7 flex-1 flex flex-col justify-between">
+            <blockquote class="text-sm sm:text-base text-gray-700 leading-relaxed italic mb-6">
+              "Omar cuenta que las herramientas de traducción le han aclarado sus dudas y lo han ayudado a comprender las palabras o frases del texto bíblico original con total fidelidad en el contexto de su pueblo."
+            </blockquote>
+            <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+              <div>
+                <p class="font-bold text-brand-blueHeader text-base">Omar</p>
+                <p class="text-xs text-gray-400">Líder Comunitario</p>
+              </div>
+              <a href="/Historias#Omar" aria-label="Leer historia de Omar" class="w-9 h-9 rounded-full bg-brand-sand hover:bg-brand-terracotta hover:text-white text-brand-blueHeader flex items-center justify-center transition-all">
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 3: Ester -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm card-hover flex flex-col justify-between">
+          <div class="relative h-60 overflow-hidden bg-gray-100">
+            <img src="https://idiomaspuentes.org/_astro/Ester3.Rmpa96K4_1TrTJL.webp" 
+                 alt="Ester" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80';">
+            <span class="absolute top-4 left-4 bg-brand-blueBtn text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+              Sudamérica
+            </span>
+          </div>
+          <div class="p-7 flex-1 flex flex-col justify-between">
+            <blockquote class="text-sm sm:text-base text-gray-700 leading-relaxed italic mb-6">
+              "Ester coincide con Omar en que las herramientas de ayuda exegética permiten despejar dudas profundas, habiendo sido testigo del admirable crecimiento técnico y espiritual de los traductores."
+            </blockquote>
+            <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+              <div>
+                <p class="font-bold text-brand-blueHeader text-base">Ester</p>
+                <p class="text-xs text-gray-400">Asesora de Traducción</p>
+              </div>
+              <a href="/Historias#Ester" aria-label="Leer historia de Ester" class="w-9 h-9 rounded-full bg-brand-sand hover:bg-brand-terracotta hover:text-white text-brand-blueHeader flex items-center justify-center transition-all">
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Callout: Comparte tu historia -->
+      <div class="bg-gradient-to-r from-orange-50/80 via-orange-50/50 to-orange-50/80 border border-orange-200/70 rounded-2xl p-8 sm:p-10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="flex items-start gap-5">
+          <div class="w-12 h-12 rounded-xl bg-orange-100 text-brand-terracotta flex items-center justify-center shrink-0">
+            <i data-lucide="message-square-quote" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="font-serif font-bold text-xl sm:text-2xl text-brand-blueHeader mb-2">
+              Comparte tu historia
+            </h3>
+            <p class="text-sm sm:text-base text-gray-600 max-w-2xl leading-relaxed">
+              ¿La traducción bíblica o nuestro ministerio ha impactado tu comunidad? Nos encantaría escuchar y compartir tu historia de transformación.
+            </p>
+          </div>
+        </div>
+        <div class="shrink-0 w-full md:w-auto">
+          <a href="/Contacto" class="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-brand-blueBtn hover:bg-brand-blueHover text-white font-semibold py-3.5 px-6 rounded-xl shadow-md transition-all">
+            <span>Envía tu Historia</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 8. RESOURCES SECTION ("RECURSOS DISPONIBLES")                             -->
+  <!-- ========================================================================= -->
+  <section class="bg-brand-bone py-24 px-4 sm:px-6 lg:px-8 border-t border-b border-brand-warmBorder">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="max-w-3xl mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-brand-blueHeader mb-4">
+          Recursos Disponibles
+        </h2>
+        <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+          Herramientas y materiales de libre acceso diseñados para apoyar el trabajo de traducción bíblica y el crecimiento integral de la iglesia.
+        </p>
+      </div>
+
+      <!-- 3 Resource Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        
+        <!-- Resource 1 -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200/80 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blueBtn flex items-center justify-center mb-6">
+              <i data-lucide="book-open" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-brand-blueHeader mb-3">
+              Los textos fuentes
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+              Para dar vida a una traducción clara y fiel en su propio idioma, los traductores indígenas cuentan con dos versiones de la Biblia en español: el <strong class="text-gray-900 font-semibold">Texto Puente Literal (TPL)</strong>, que conserva la forma del texto original, y el <strong class="text-gray-900 font-semibold">Texto Puente Simple (TPS)</strong>, que expresa su mensaje con sencillez y profundidad.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 flex items-center gap-2 text-xs font-semibold text-brand-blueBtn">
+            <span>TPL & TPS de Acceso Abierto</span>
+          </div>
+        </div>
+
+        <!-- Resource 2 -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200/80 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-orange-50 text-brand-terracotta flex items-center justify-center mb-6">
+              <i data-lucide="book-marked" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-brand-blueHeader mb-3">
+              Las ayudas de traducción
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+              Apoyo práctico y contextual para cada etapa: Notas exegéticas, módulos de formación, términos clave del evangelio y preguntas de comprobación de comprensión para comunicar con fidelidad el mensaje.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 flex items-center gap-2 text-xs font-semibold text-brand-terracotta">
+            <span>Exégesis & Comprensión</span>
+          </div>
+        </div>
+
+        <!-- Resource 3 -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200/80 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-orange-50 text-brand-terracotta flex items-center justify-center mb-6">
+              <i data-lucide="users" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-brand-blueHeader mb-3">
+              Material de discipulado
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+              Recursos que impulsan el crecimiento espiritual de la iglesia local a través de enseñanzas bíblicas que fortalecen la fe, promueven el liderazgo nativo y nutren comunidades maduras.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 flex items-center gap-2 text-xs font-semibold text-brand-terracotta">
+            <span>Liderazgo Nativo</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Action Button -->
+      <div class="text-center">
+        <a href="/Recursos" class="inline-flex items-center gap-2.5 bg-white hover:bg-orange-50/50 text-brand-blueHeader font-semibold py-4 px-8 rounded-xl border border-orange-200/80 shadow-sm hover:shadow transition-all group">
+          <i data-lucide="folder-open" class="w-5 h-5 text-brand-terracotta"></i>
+          <span>Ver todos los Recursos</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 9. PRAYER & INTERCESSION ("ÚNETE A NUESTRA RED DE INTERCESIÓN")          -->
+  <!-- ========================================================================= -->
+  <section class="bg-brand-ivory py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="max-w-3xl mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-brand-blueHeader mb-4">
+          Únete a Nuestra Red de Intercesión
+        </h2>
+        <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+          Sé parte del avance de la traducción bíblica a numerosos idiomas a través del poder de la oración conjunta.
+        </p>
+      </div>
+
+      <!-- 3 Prayer Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Prayer 1 -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200/80 shadow-sm card-hover">
+          <div class="w-12 h-12 rounded-xl bg-orange-50 text-brand-terracotta flex items-center justify-center mb-6">
+            <i data-lucide="users" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-brand-blueHeader mb-3">
+            Ora por Traductores
+          </h3>
+          <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+            Hay una necesidad creciente de traductores bilingües que traduzcan del inglés al español o al portugués, junto con especialistas en los idiomas bíblicos originales que aporten profundidad y precisión al proceso. Tu apoyo en oración abre caminos para que más obreros respondan.
+          </p>
+        </div>
+
+        <!-- Prayer 2 -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200/80 shadow-sm card-hover">
+          <div class="w-12 h-12 rounded-xl bg-orange-50 text-brand-terracotta flex items-center justify-center mb-6">
+            <i data-lucide="house" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-brand-blueHeader mb-3">
+            Ora por las Comunidades
+          </h3>
+          <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+            En Latinoamérica y en la Comunidad de países de lengua portuguesa, muchas lenguas indígenas siguen vivas en la voz de sus pueblos, pero aún esperan recibir la Palabra en el idioma que les es más íntimo y profundo. Acompaña con intercesión constante a estas familias.
+          </p>
+        </div>
+
+        <!-- Prayer 3 -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200/80 shadow-sm card-hover">
+          <div class="w-12 h-12 rounded-xl bg-orange-50 text-brand-terracotta flex items-center justify-center mb-6">
+            <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-brand-blueHeader mb-3">
+            Ora por Recursos
+          </h3>
+          <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+            Contribuye con tu oración para que Dios provea los recursos necesarios para el desarrollo del proyecto. Desde el sostenimiento de misioneros hasta la formación técnica de nuevos traductores y lingüistas, cada ofrenda es vital para avanzar sin demoras.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 10. WAYS TO GET INVOLVED & CLOSING CTA BANNER                             -->
+  <!-- ========================================================================= -->
+  <section class="bg-brand-bone py-24 px-4 sm:px-6 lg:px-8 border-t border-brand-warmBorder">
+    <div class="max-w-7xl mx-auto space-y-20">
+      
+      <!-- Part A: Formas de Involucrarse -->
+      <div>
+        <div class="max-w-3xl mb-14">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-brand-blueHeader mb-4">
+            Formas de Involucrarse
+          </h2>
+          <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+            Hay muchas maneras de ser parte de esta misión transformadora.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Way 1: Orando -->
+          <div class="bg-white rounded-2xl p-8 border border-gray-200/80 shadow-sm card-hover flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blueBtn flex items-center justify-center mb-6">
+                <i data-lucide="heart" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-brand-blueHeader mb-3">
+                Orando
+              </h3>
+              <p class="text-gray-600 leading-relaxed text-sm sm:text-base mb-6">
+                Únete a nuestra red de oración mensual y respalda el trabajo de traducción bíblica a través de motivos específicos compartidos desde el campo.
+              </p>
+            </div>
+            <a href="/Involucrate#orando" class="inline-flex items-center gap-2 text-brand-blueBtn font-semibold text-sm hover:text-brand-terracotta group">
+              <span>Saber más sobre Oración</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+            </a>
+          </div>
+
+          <!-- Way 2: Donando -->
+          <div class="bg-white rounded-2xl p-8 border border-gray-200/80 shadow-sm card-hover flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-orange-50 text-brand-terracotta flex items-center justify-center mb-6">
+                <i data-lucide="dollar-sign" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-brand-blueHeader mb-3">
+                Donando
+              </h3>
+              <p class="text-gray-600 leading-relaxed text-sm sm:text-base mb-6">
+                Tu donación regular o única hace posible la traducción bíblica, la provisión tecnológica y el equipamiento integral de las iglesias locales en necesidad.
+              </p>
+            </div>
+            <a href="/Involucrate#donando" class="inline-flex items-center gap-2 text-brand-terracotta font-semibold text-sm hover:text-brand-terracottaHover group">
+              <span>Saber más sobre Donar</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+            </a>
+          </div>
+
+          <!-- Way 3: Sirviendo -->
+          <div class="bg-white rounded-2xl p-8 border border-gray-200/80 shadow-sm card-hover flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-orange-50 text-brand-terracotta flex items-center justify-center mb-6">
+                <i data-lucide="users" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-brand-blueHeader mb-3">
+                Sirviendo
+              </h3>
+              <p class="text-gray-600 leading-relaxed text-sm sm:text-base mb-6">
+                Explora oportunidades para servir como traductor profesional, asesor teológico, diseñador pedagógico, capacitador o voluntario de campo.
+              </p>
+            </div>
+            <a href="/Involucrate#sirviendo" class="inline-flex items-center gap-2 text-brand-terracotta font-semibold text-sm hover:text-brand-terracottaHover group">
+              <span>Saber más sobre Servir</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Part B: Closing CTA Banner -->
+      <div class="bg-gradient-to-r from-brand-navy via-brand-blueHeader to-brand-navy rounded-3xl p-8 sm:p-12 lg:p-14 shadow-2xl border border-white/10 flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden">
+        <div class="space-y-3 text-center lg:text-left max-w-2xl relative z-10">
+          <h3 class="text-2xl sm:text-3xl font-serif font-bold text-white">
+            ¿Listo para hacer la diferencia?
+          </h3>
+          <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+            Tu participación puede transformar vidas y comunidades enteras. Únete a nosotros en esta bendita misión de llevar la Palabra de Dios a cada lengua y corazón.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center gap-4 shrink-0 w-full sm:w-auto relative z-10">
+          <a href="/Contacto" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-brand-blueHeader font-semibold py-3.5 px-6 rounded-xl shadow-md text-sm transition-all">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>Contáctanos</span>
+          </a>
+          <a href="/Involucrate" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-terracotta hover:bg-brand-terracottaHover text-white font-semibold py-3.5 px-6 rounded-xl shadow-md text-sm transition-all">
+            <i data-lucide="heart-handshake" class="w-4 h-4"></i>
+            <span>Involúcrate</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 11. FOOTER                                                                -->
+  <!-- ========================================================================= -->
+  <footer class="bg-brand-navyDark text-gray-300 py-12 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center">
+        <img src="https://idiomaspuentes.org/_astro/logo-id-blanco.pUxQ_d_a_Z2lh9tR.svg" 
+             alt="Logo Idiomas Puentes" 
+             class="h-9 w-auto object-contain">
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-xs sm:text-sm text-gray-400 text-center">
+        © 2025 IdiomasPuentes. Todos los derechos reservados.
+      </div>
+
+      <!-- Social Link: Instagram -->
+      <div class="flex items-center gap-4">
+        <a href="https://www.instagram.com/idiomaspuentes/?igsh=MTE5cGk2Y2V3amRtMw%3D%3D#" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           aria-label="Instagram de Idiomas Puentes"
+           class="w-10 h-10 rounded-xl bg-white/5 hover:bg-brand-terracotta text-gray-300 hover:text-white flex items-center justify-center transition-all">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Script for Mobile Menu & Lucide Icons -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // Dynamic header elevation on scroll
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header.classList.add('py-1');
+      } else {
+        header.classList.remove('py-1');
+      }
+    });
+  </script>
+</body>
+</html>
