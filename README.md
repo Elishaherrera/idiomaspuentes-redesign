@@ -1,101 +1,76 @@
-# Rediseño de la Página de Inicio: Idiomas Puentes
+# Rediseño Completo del Sitio Web: Idiomas Puentes (idiomaspuentes.org)
 
-Este documento detalla el rediseño completo de la página principal (**Inicio**) de [idiomaspuentes.org](https://idiomaspuentes.org). 
-
-El objetivo principal alcanzado es elevar la calidad estética, legibilidad y jerarquía visual del sitio a un estándar internacional contemporáneo (al estilo de organizaciones globales como *BibleProject*, *Wycliffe* o *Seed Company*), **sin alterar ninguna palabra o dato informativo** y **respetando rigurosamente su paleta cromática original**.
+Este repositorio contiene el rediseño integral de todas las páginas del sitio web oficial de **[Idiomas Puentes](https://idiomaspuentes.org)**, desarrollado con una arquitectura visual moderna, limpia, responsiva y de estándar editorial internacional, **sin alterar ninguna palabra o información del sitio original** y respetando estrictamente **la paleta de colores institucional**.
 
 ---
 
-## 🎨 1. Paleta de Colores Oficial Preservada
+## 🎨 Paleta de Colores Institucional
 
-Se mantuvieron exactamente los códigos y valores cromáticos identitarios del sitio original:
-
-| Rol de Color | Código Hex / Token | Aplicación en el Rediseño |
+| Tono | Código Hex | Aplicación |
 | :--- | :--- | :--- |
-| **Azul Marino Profundo (Hero & Impacto)** | `#0A1628` | Fondo inmersivo del Hero, gradientes nocturnos y caja de Impacto Global. |
-| **Azul Marino Secundario (Superficies)** | `#13233D` | Tarjetas de métricas oscuras con bordes de cristal suave (`border-white/10`). |
-| **Azul Marino Títulos & Textos** | `#172554` / `#0A1628` | Tipografía de encabezados H1, H2, H3 principales (`text-blue-950`). |
-| **Azul de Acción / Botones** | `#1E3A8A` / `#1E40AF` | Botón activo de navegación, botón de impacto y badges de proyectos completados. |
-| **Terracota / Óxido (Acento Principal)** | `#B35438` | Llamados a la acción (CTA) primarios ("Donar", "Involúcrate", "Conoce más"). |
-| **Terracota Hover & Presionado** | `#96432B` / `#8B4513` | Estados interactivos hover y focus de botones terracota. |
-| **Terracota Acento & Luces** | `#D97757` | Resaltados de texto en fondos oscuros y números destacados en métricas. |
-| **Arena Cálida (Biblia & Fondos)** | `#FAF7F2` | Sección bíblica, micro-fondos de iconos y tarjetas de escrituras. |
-| **Marfil Suave (Secciones Claras)** | `#FCFBF9` | Fondo de Misión, Áreas de Necesidad y Red de Intercesión. |
-| **Hueso / Gris Cálido (Alternancia)** | `#F7F5F0` | Fondo de Proyectos, Recursos Disponibles y Formas de Involucrarse. |
-| **Blanco Nieve (Superficies)** | `#FFFFFF` | Tarjetas de contenido con elevación sutil y bordes orgánicos. |
-| **Gris Texto & Cuerpo** | `#374151` / `#4B5563` | Lectura cómoda, alto contraste accesible (cumple WCAG AAA). |
+| **Azul Marino Profundo** | `#0A1628` | Fondo inmersivo Hero con malla radial, cajas de impacto global, pies de página. |
+| **Azul Marino Secundario** | `#13233D` | Superficies de tarjetas oscuras, métricas en relieve con bordes de cristal suave. |
+| **Azul Institucional** | `#172554` / `#1E3A8A` | Títulos principales, badges completados, botones de navegación activa. |
+| **Terracota / Óxido** | `#B35438` | Botones de llamado a la acción primarios (*Donar*, *Involúcrate*, *Enviar Mensaje*). |
+| **Terracota Claro / Acento**| `#D97757` | Destacados tipográficos sobre fondos nocturnos y métricas clave. |
+| **Arena Cálida** | `#FAF7F2` | Fondos de citas bíblicas, micro-fondos de iconos y tarjetas de pergamino. |
+| **Marfil Suave** | `#FCFBF9` | Fondos orgánicos de lectura clara para secciones de identidad y valores. |
+| **Hueso / Gris Cálido** | `#F7F5F0` | Alternancia rítmica de secciones secundarias. |
+| **Blanco Nieve** | `#FFFFFF` | Tarjetas de contenido con sombras suaves y esquinas redondeadas modernas. |
 
 ---
 
-## 📐 2. Principales Mejoras de Arquitectura & UI/UX
+## 🌐 Páginas Rediseñadas del Sitio Completo
 
-```mermaid
-flowchart TD
-    A["Navegación Flotante Glassmorphism"] --> B["Hero Editorial con Malla de Luz"]
-    B --> C["Citas Bíblicas en Tarjetas de Pergamino"]
-    C --> D["3 Pilares de Misión con Micro-Iconos"]
-    D --> E["Proyectos con Barras de Progreso Reales"]
-    E --> F["Infografía Bento de Áreas de Necesidad"]
-    F --> G["Caja Inmersiva de Impacto Global (Dark)"]
-    G --> H["Historias de Testimonio Editorial"]
-    H --> I["Catálogo de Recursos TPL & TPS"]
-    I --> J["Red de Intercesión & Oración"]
-    J --> K["Formas de Involucrarse & Banner Final"]
-    K --> L["Pie de Página Institucional"]
-```
+Todas las páginas están 100% interconectadas mediante la barra flotante de navegación (`glass-nav`) y desplegadas en el servidor local:
 
-### Detalle de Transformación por Sección:
+1. **[Inicio (`index.html`)](index.html)**:
+   * Hero editorial con composición simétrica y fondo de malla nocturna.
+   * Citas bíblicas de la iglesia primitiva (*2 Corintios 8:1-2* y *Hechos 11:29*).
+   * Tres pilares de misión, proyectos con barras de avance visuales (9% y 100%), cuadrícula Bento de *Áreas de Necesidad*, panel inmersivo de *Impacto Global*, testimonios y recursos.
 
-1. **Navegación Flotante (`glass-nav`)**:
-   - Pasa de una barra gris rígida a una barra flotante con efecto de cristal esmerilado (*backdrop-filter blur*), esquinas redondeadas modernas y botón "Donar" con ícono de ayuda.
-   - Menú móvil responsivo y accesible integrado sin recargar la página.
+2. **[Nosotros (`nosotros.html`)](nosotros.html)**:
+   * Identidad institucional: *¿Quiénes Somos?* con los 4 pilares (*Discípulos*, *Iglesias*, *Comunidades*, *Evangelio*).
+   * Módulo doble simétrico: *Nuestra Visión* (en azul marino) y *Nuestra Misión* (con los 3 ejes de acción).
+   * *Nuestros Valores* con sus respectivas citas bíblicas armonizadas en la paleta oficial (*Alegría*, *Humildad*, *Aprendizaje*, *Interdependencia*, *Excelencia*).
+   * Módulo explicativo de *¿Cómo lo Hacemos?*.
 
-2. **Hero Editorial Inmersivo**:
-   - Fondo con degradado radial sutil (*radial mesh*) en azul marino `#0A1628` con destellos terracota y azul zafiro.
-   - Tag flotante superior *"Misión & Traducción Bíblica"*.
-   - Imagen principal montada en un marco de cristal con sombra profunda y ficha informativa flotante.
-   - Mantiene la cita completa y botones: *"Nuestros Proyectos"* e *"Involúcrate"*.
+3. **[Proyectos (`proyectos.html`)](proyectos.html)**:
+   * Panel de control del progreso general con las métricas consolidadas (4 paquetes completados, 3 en progreso, 59 sin iniciar, 9% global).
+   * Ficha de *Historias Bíblicas Abiertas* con enlace directo al PDF oficial.
+   * **Catálogo Interactivo de los 66 Libros de la Biblia** con pestañas de filtro (*Todos*, *Completados*, *En Progreso*, *Antiguo Testamento*, *Nuevo Testamento*) y buscador en tiempo real.
 
-3. **Fundamento Bíblico ("Siguiendo el Ejemplo de la Iglesia Primitiva")**:
-   - Tarjetas simétricas de alta legibilidad con comillas estilizadas en gran formato.
-   - Línea acento lateral en Azul Marino para **2 Corintios 8:1-2** y Terracota para **Hechos 11:29**.
+4. **[Historias (`historias.html`)](historias.html)**:
+   * Resumen de impacto de la Amazonía desde 2020 con unfoldingWord.
+   * Reportajes testimoniales a profundidad de **Armando** (traductor indígena), **Omar** (traductor comunitario) y **Ester** (facilitadora sudamericana) con sus citas textuales, diálogos y notas de seguridad.
+   * Panel de *Impacto Global* (*Crecimiento espiritual*, *Preservación cultural*, *Empoderamiento*).
 
-4. **Nuestra Misión**:
-   - Encabezado con etiqueta en mayúsculas y bandera distintiva.
-   - 3 tarjetas con íconos vectoriales en contenedores cálidos (`#FAF7F2`) y etiquetas de compromiso al pie.
+5. **[Recursos (`recursos.html`)](recursos.html)**:
+   * Explicación del *Ciclo de Creación de Recursos* en 8 pasos con las versiones TPL y TPS.
+   * Biblioteca de herramientas de unfoldingWord conectada a sus visores oficiales en Door43:
+     * *Texto Puente Literal (TPL)*
+     * *Texto Puente Simple (TPS)*
+     * *Notas de Traducción*
+     * *Preguntas de Traducción*
+     * *Academia de Traducción*
+     * *Palabras de Traducción*
+   * Showcase de la *Guía del Flujo de Creación de Recursos (FCR)* en Netlify.
 
-5. **Nuestros Proyectos**:
-   - Barras de progreso visuales calibradas al 9% (*Traducción al idioma puente español*) y al 100% (*Historias Bíblicas Abiertas en español*).
-   - Bloques métricos internos con fondo crema que destacan la meta (66 libros) y el alcance (Hispanoamérica).
+6. **[Involúcrate (`involucrate.html`)](involucrate.html)**:
+   * **1. Orando (`#orando`)**: 2 Tesalonicenses 3:1 y los 5 motivos de oración específicos.
+   * **2. Donando (`#donando`)**: Información ministerial y pasarela de donación segura integrada.
+   * **3. Sirviendo (`#sirviendo`)**: Necesidades del ministerio y los 5 perfiles requeridos para el equipo.
 
-6. **Áreas de Necesidad**:
-   - Cuadrícula estilo *Bento Grid* de 4 columnas.
-   - Números de gran impacto visual (`92,5%`, `60%`, `76,9%`, `119`) con enlaces directos a las fuentes documentales (*Instituto Cervantes*, *SISPPI CELADE*, *IWGIA*, *Ethnologue*).
-
-7. **Nuestro Impacto Global**:
-   - Caja inmersiva nocturna `#0A1628` con destellos de iluminación ambiental.
-   - 4 cuadrículas de métricas destacadas en tono `#D97757` con subtítulos descriptivos claros.
-
-8. **Historias de Impacto**:
-   - Tarjetas de testimonio tipo revista para Armando, Omar y Ester con badges geográficos (`AMAZONÍA`, `SUDAMÉRICA`).
-   - Módulo destacado inferior *"Comparte tu historia"* con llamado al contacto directo.
-
-9. **Recursos Disponibles**:
-   - Tarjetas con explicación clara del Texto Puente Literal (TPL) y Texto Puente Simple (TPS), ayudas exegéticas y discipulado.
-
-10. **Red de Intercesión & Formas de Involucrarse**:
-    - División clara de motivos de oración (Traductores, Comunidades, Recursos).
-    - Canales de participación: Orando, Donando y Sirviendo.
-    - Banner de cierre en gradiente con doble botón de acción ("Contáctanos" e "Involúcrate").
+7. **[Contacto (`contacto.html`)](contacto.html)**:
+   * Formulario de contacto moderno con micro-interacciones y validación visual.
+   * Canales de comunicación directa: correo oficial `idiomaspuentes@gmail.com` e Instagram `@idiomaspuentes`.
 
 ---
 
-## 📁 3. Archivo del Proyecto Generado
+## 💻 Visualización Local
 
-El código fuente completo, listo para abrir en cualquier navegador o desplegar en producción, se encuentra en:
-
-- [index.html](file:///C:/Users/elish/.gemini/antigravity/scratch/idiomaspuentes-redesign/index.html)
-
-### ¿Cómo probarlo localmente?
-1. Puedes abrir directamente el archivo [index.html](file:///C:/Users/elish/.gemini/antigravity/scratch/idiomaspuentes-redesign/index.html) en tu navegador web (Google Chrome, Edge, Firefox, Safari).
-2. Es completamente autónomo: carga fuentes tipográficas elegantes (*Lora* y *Plus Jakarta Sans*), Tailwind CSS y la librería de íconos *Lucide*.
+Para ver el proyecto en vivo en tu equipo:
+* **Vía servidor local activo**:
+  * [http://localhost:8085/](http://localhost:8085/)
+* **Vía archivos locales directos**:
+  * Puedes abrir cualquiera de los archivos `.html` con doble clic en tu navegador preferido (Google Chrome, Edge, Firefox, Safari).
