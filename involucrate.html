@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Involúcrate | Idiomas Puentes - Sé Parte de la Misión</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0A1628',
+              navyCard: '#13233D',
+              navyDark: '#070F1C',
+              blueHeader: '#172554',
+              blueBtn: '#1E3A8A',
+              blueHover: '#1E40AF',
+              terracotta: '#B35438',
+              terracottaHover: '#96432B',
+              terracottaDark: '#8B4513',
+              terracottaLight: '#D97757',
+              sand: '#FAF7F2',
+              ivory: '#FCFBF9',
+              bone: '#F7F5F0',
+              warmBorder: '#EFECE6'
+            }
+          },
+          fontFamily: {
+            serif: ['Lora', 'ui-serif', 'Georgia', 'Cambria', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .hero-mesh {
+      background-color: #0A1628;
+      background-image: 
+        radial-gradient(at 15% 25%, rgba(179, 84, 56, 0.18) 0px, transparent 55%),
+        radial-gradient(at 85% 75%, rgba(30, 58, 138, 0.35) 0px, transparent 60%),
+        radial-gradient(at 50% 50%, rgba(10, 22, 40, 1) 0px, transparent 100%);
+    }
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 25px -8px rgba(10, 22, 40, 0.08);
+    }
+    .modal-backdrop {
+      background: rgba(10, 22, 40, 0.65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-700 bg-brand-ivory antialiased selection:bg-brand-terracotta selection:text-white">
+
+  <!-- ========================================================================= -->
+  <!-- 0. MODERN FLOATING NAVIGATION BAR                                         -->
+  <!-- ========================================================================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="mainHeader">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-3">
+      <nav class="glass-nav border border-gray-200/80 rounded-2xl shadow-sm px-5 py-3.5 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-terracotta rounded-lg">
+          <img src="https://idiomaspuentes.org/_astro/LogoIp.C-UIEVDp_COJ73.webp" 
+               alt="logo Idiomas Puentes" 
+               class="h-8 md:h-9 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+               onerror="this.onerror=null; this.src='https://idiomaspuentes.org/_astro/logo-id-blanco.pUxQ_d_a_Z2lh9tR.svg'; this.style.filter='invert(1) brightness(0.2)';">
+        </a>
+
+        <!-- Desktop Nav Items (Involúcrate is Active) -->
+        <div class="hidden lg:flex items-center gap-1.5 xl:gap-2">
+          <a href="index.html" class="px-3.5 py-2 rounded-xl text-sm font-medium text-gray-700 hover:text-brand-blueHeader hover:bg-gray-100/70 transition-all">Inicio</a>
+          <a href="nosotros.html" class="px-3.5 py-2 rounded-xl text-sm font-medium text-gray-700 hover:text-brand-blueHeader hover:bg-gray-100/70 transition-all">Nosotros</a>
+          <a href="proyectos.html" class="px-3.5 py-2 rounded-xl text-sm font-medium text-gray-700 hover:text-brand-blueHeader hover:bg-gray-100/70 transition-all">Proyectos</a>
+          <a href="historias.html" class="px-3.5 py-2 rounded-xl text-sm font-medium text-gray-700 hover:text-brand-blueHeader hover:bg-gray-100/70 transition-all">Historias</a>
+          <a href="recursos.html" class="px-3.5 py-2 rounded-xl text-sm font-medium text-gray-700 hover:text-brand-blueHeader hover:bg-gray-100/70 transition-all">Recursos</a>
+          <a href="involucrate.html" class="px-4 py-2 rounded-xl text-sm font-semibold bg-brand-blueBtn text-white shadow-sm transition-all">Involúcrate</a>
+          <a href="#contacto" id="navContactBtn" class="px-3.5 py-2 rounded-xl text-sm font-medium text-gray-700 hover:text-brand-blueHeader hover:bg-gray-100/70 transition-all">Contacto</a>
+        </div>
+
+        <!-- Action / Donate Button -->
+        <div class="hidden lg:flex items-center gap-3">
+          <button id="openDonateModalBtn" class="inline-flex items-center gap-2 bg-brand-terracotta hover:bg-brand-terracottaHover text-white text-sm font-semibold py-2.5 px-5 rounded-xl shadow-sm hover:shadow transition-all duration-200 transform hover:-translate-y-0.5">
+            <i data-lucide="hand-helping" class="w-4 h-4"></i>
+            <span>Donar</span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" aria-label="Abrir menú" class="lg:hidden p-2 rounded-xl text-gray-700 hover:bg-gray-100 focus:outline-none">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Mobile Drawer Dropdown -->
+    <div id="mobileMenu" class="hidden lg:hidden max-w-7xl mx-auto px-4 mt-2">
+      <div class="bg-white/95 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-xl p-5 space-y-2">
+        <a href="index.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 hover:bg-gray-50">Inicio</a>
+        <a href="nosotros.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 hover:bg-gray-50">Nosotros</a>
+        <a href="proyectos.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 hover:bg-gray-50">Proyectos</a>
+        <a href="historias.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 hover:bg-gray-50">Historias</a>
+        <a href="recursos.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 hover:bg-gray-50">Recursos</a>
+        <a href="involucrate.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold bg-brand-blueBtn text-white">Involúcrate</a>
+        <a href="#contacto" id="mobileContactBtn" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 hover:bg-gray-50">Contacto</a>
+        <div class="pt-2 border-t border-gray-100">
+          <button id="mobileDonateBtn" class="w-full flex items-center justify-center gap-2 bg-brand-terracotta hover:bg-brand-terracottaHover text-white font-medium py-3 px-5 rounded-xl text-sm shadow-sm">
+            <i data-lucide="hand-helping" class="w-4 h-4"></i>
+            <span>Donar</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ========================================================================= -->
+  <!-- 1. HERO SECTION: ¿CÓMO PUEDES FORMAR PARTE?                              -->
+  <!-- ========================================================================= -->
+  <section class="hero-mesh min-h-[60vh] pt-36 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden flex items-center justify-center text-center">
+    <!-- Grid overlay pattern -->
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px); background-size: 64px 64px;"></div>
+
+    <div class="max-w-4xl mx-auto relative z-10 space-y-6">
+      
+      <!-- Tag / Pill -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-brand-terracottaLight text-xs font-semibold uppercase tracking-wider">
+        <i data-lucide="heart-handshake" class="w-4 h-4 text-brand-terracottaLight"></i>
+        <span>Participación Activa</span>
+      </div>
+
+      <!-- Main Headline (Exact Copy) -->
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight leading-[1.12]">
+        ¿Cómo puedes <span class="text-brand-terracottaLight">formar parte?</span>
+      </h1>
+
+      <div class="w-20 h-1 bg-brand-terracotta mx-auto rounded-full"></div>
+
+      <!-- Subtitle (Exact Copy) -->
+      <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto font-normal">
+        Únete a nosotros en esta misión de llevar la palabra de Dios a cada pueblo en su idioma de corazón
+      </p>
+
+      <!-- Quick Anchor Navigation Pills -->
+      <div class="pt-6 flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-gray-300">
+        <a href="#orando" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-sm transition-all">
+          <i data-lucide="heart" class="w-4 h-4 text-brand-terracottaLight"></i>
+          <span>1. Orando</span>
+        </a>
+        <a href="#donando" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-sm transition-all">
+          <i data-lucide="dollar-sign" class="w-4 h-4 text-brand-terracottaLight"></i>
+          <span>2. Donando</span>
+        </a>
+        <a href="#sirviendo" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-sm transition-all">
+          <i data-lucide="users" class="w-4 h-4 text-brand-terracottaLight"></i>
+          <span>3. Sirviendo</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 2. SECTION: 1. ORANDO                                                     -->
+  <!-- ========================================================================= -->
+  <section id="orando" class="bg-brand-sand py-24 px-4 sm:px-6 lg:px-8 border-b border-brand-warmBorder scroll-mt-24">
+    <div class="max-w-6xl mx-auto space-y-12">
+      
+      <!-- Main Card Orando -->
+      <div class="bg-white rounded-3xl p-8 sm:p-12 lg:p-14 shadow-sm border border-gray-200/80 card-hover">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          
+          <!-- Left Column -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-blue-50 text-brand-blueBtn flex items-center justify-center shrink-0 shadow-sm border border-blue-100">
+                <i data-lucide="heart" class="w-7 h-7"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-terracotta block">Canal 1</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-brand-blueHeader">
+                  Orando
+                </h2>
+              </div>
+            </div>
+
+            <!-- Scripture Card 2 Tesalonicenses (Exact Copy) -->
+            <div class="bg-brand-sand rounded-2xl p-6 sm:p-7 border-l-4 border-brand-blueBtn border-t border-r border-b border-blue-100/60 shadow-inner space-y-4">
+              <span class="text-brand-blueBtn/30 font-serif text-5xl leading-none block -mt-4 mb-1">“</span>
+              <blockquote class="text-gray-800 text-sm sm:text-base font-serif italic leading-relaxed">
+                "Finalmente, amados hermanos, les pedimos que oren por nosotros. Oren para que el mensaje del Señor se difunda rápidamente y sea honrado en todo lugar adonde llegue, así como cuando les llegó a ustedes."
+              </blockquote>
+              <span class="text-right block text-xs font-bold text-brand-blueBtn tracking-wider uppercase">
+                - 2 Tesalonicenses 3:1
+              </span>
+            </div>
+
+            <p class="text-sm text-gray-600 leading-relaxed">
+              La oración de la iglesia sostiene cada traducción y abre las puertas del corazón en cada comunidad nativa.
+            </p>
+          </div>
+
+          <!-- Right Column: Motivos de Oración -->
+          <div class="lg:col-span-7 space-y-6">
+            
+            <div class="space-y-2">
+              <h3 class="text-xl sm:text-2xl font-serif font-bold text-brand-blueHeader">
+                ¡Acompáñanos en oración!
+              </h3>
+              <!-- Paragraph (Exact Copy) -->
+              <p class="text-base text-gray-700 leading-relaxed">
+                La voluntad de Dios es que su mensaje llegue a todo pueblo. Mientras trabajamos para que su propósito se cumpla, te pedimos que te unas a nosotros.
+              </p>
+            </div>
+
+            <div class="pt-2">
+              <h4 class="text-sm font-bold uppercase tracking-wider text-brand-terracotta mb-4">
+                Ora por:
+              </h4>
+
+              <!-- 5 Prayer Points (Exact Copy) -->
+              <div class="space-y-3.5">
+                
+                <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-brand-sand border border-brand-warmBorder">
+                  <div class="w-6 h-6 rounded-lg bg-blue-100 text-brand-blueBtn flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </div>
+                  <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    Sabiduría para traducir la palabra de Dios fielmente.
+                  </p>
+                </div>
+
+                <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-brand-sand border border-brand-warmBorder">
+                  <div class="w-6 h-6 rounded-lg bg-blue-100 text-brand-blueBtn flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </div>
+                  <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    Los hermanos indígenas que están empezando a estudiar las historias bíblicas en su idioma de corazón.
+                  </p>
+                </div>
+
+                <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-brand-sand border border-brand-warmBorder">
+                  <div class="w-6 h-6 rounded-lg bg-blue-100 text-brand-blueBtn flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </div>
+                  <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    Nuevos traductores, teólogos, comunicadores, educadores, ingenieros en sistemas o en computación para que formen parte de este proyecto.
+                  </p>
+                </div>
+
+                <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-brand-sand border border-brand-warmBorder">
+                  <div class="w-6 h-6 rounded-lg bg-blue-100 text-brand-blueBtn flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </div>
+                  <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    Provisión de todas las necesidades de cada uno de los miembros de Idiomas Puentes.
+                  </p>
+                </div>
+
+                <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-brand-sand border border-brand-warmBorder">
+                  <div class="w-6 h-6 rounded-lg bg-blue-100 text-brand-blueBtn flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </div>
+                  <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    Dirección de Dios para el equipo que coordina el proyecto.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 3. SECTION: 2. DONANDO                                                    -->
+  <!-- ========================================================================= -->
+  <section id="donando" class="bg-brand-ivory py-24 px-4 sm:px-6 lg:px-8 border-b border-brand-warmBorder scroll-mt-24">
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="bg-white rounded-3xl p-8 sm:p-12 lg:p-14 shadow-sm border border-gray-200/80 card-hover">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Content Left -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-orange-50 text-brand-terracotta flex items-center justify-center shrink-0 shadow-sm border border-orange-100">
+                <i data-lucide="hand-helping" class="w-7 h-7"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-terracotta block">Canal 2</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-brand-blueHeader">
+                  Donando
+                </h2>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <h3 class="text-xl sm:text-2xl font-serif font-bold text-brand-blueHeader">
+                Gracias por apoyarnos
+              </h3>
+              <!-- Paragraph 1 (Exact Copy) -->
+              <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
+                Tu contribución nos ayudará a proporcionar a las comunidades de Latinoamérica los recursos que necesitan para hacer sus traducciones de la Biblia.
+              </p>
+            </div>
+
+            <!-- Callout Card (Exact Copy) -->
+            <div class="bg-brand-sand rounded-2xl p-6 border-l-4 border-brand-terracotta border-t border-r border-b border-orange-100/60 flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-orange-100 text-brand-terracotta flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="heart" class="w-5 h-5"></i>
+              </div>
+              <p class="text-sm sm:text-base text-gray-800 font-medium leading-relaxed">
+                Cada donación hace posible que más pueblos tengan acceso a la Palabra de Dios en su propio idioma
+              </p>
+            </div>
+          </div>
+
+          <!-- Donation Trigger Box Right -->
+          <div class="lg:col-span-5 bg-brand-navy rounded-3xl p-8 text-white text-center space-y-6 shadow-xl border border-white/10">
+            <div class="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 text-brand-terracottaLight mx-auto flex items-center justify-center shadow-sm">
+              <i data-lucide="dollar-sign" class="w-8 h-8"></i>
+            </div>
+            
+            <div class="space-y-2">
+              <h4 class="text-2xl font-serif font-bold text-white">Contribución Segura</h4>
+              <p class="text-xs sm:text-sm text-gray-300">
+                Apoya la provisión tecnológica, logística y exegética de las iglesias nativas.
+              </p>
+            </div>
+
+            <div>
+              <button id="openDonateModalBtn2" class="w-full inline-flex items-center justify-center gap-2.5 bg-brand-terracotta hover:bg-brand-terracottaHover text-white font-semibold py-4 px-8 rounded-xl shadow-lg transition-all text-base group">
+                <i data-lucide="hand-helping" class="w-5 h-5"></i>
+                <!-- Exact button copy -->
+                <span>Donar ahora</span>
+              </button>
+            </div>
+
+            <p class="text-[11px] text-gray-400">
+              Transferencias seguras y transparentes respaldadas para el ministerio.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 4. SECTION: 3. SIRVIENDO                                                  -->
+  <!-- ========================================================================= -->
+  <section id="sirviendo" class="bg-brand-bone py-24 px-4 sm:px-6 lg:px-8 border-b border-brand-warmBorder scroll-mt-24">
+    <div class="max-w-6xl mx-auto space-y-12">
+      
+      <div class="bg-white rounded-3xl p-8 sm:p-12 lg:p-14 shadow-sm border border-gray-200/80 card-hover">
+        
+        <!-- Header -->
+        <div class="flex items-center gap-4 mb-10 pb-6 border-b border-gray-100">
+          <div class="w-14 h-14 rounded-2xl bg-blue-50 text-brand-blueBtn flex items-center justify-center shrink-0 shadow-sm border border-blue-100">
+            <i data-lucide="users" class="w-7 h-7"></i>
+          </div>
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-brand-terracotta block">Canal 3</span>
+            <h2 class="text-3xl sm:text-4xl font-serif font-bold text-brand-blueHeader">
+              Sirviendo
+            </h2>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          
+          <!-- Column 1: ¿Qué necesitamos? -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl bg-orange-50 text-brand-terracotta flex items-center justify-center shrink-0">
+                <i data-lucide="lightbulb" class="w-4 h-4"></i>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-serif font-bold text-brand-blueHeader">
+                ¿Qué necesitamos?
+              </h3>
+            </div>
+
+            <!-- Paragraph (Exact Copy) -->
+            <p class="text-base text-gray-700 leading-relaxed font-normal bg-brand-sand rounded-2xl p-6 border border-brand-warmBorder">
+              Un ejército de hombres y mujeres seguidores de Cristo que pongan sus dones, recursos y experiencia al servicio del reino de Dios, para así proveer lo necesario para el discipulado y la plantación de iglesias maduras.
+            </p>
+
+            <div class="pt-4">
+              <button id="openContactModalBtn2" class="inline-flex items-center gap-2.5 bg-brand-blueBtn hover:bg-brand-blueHover text-white font-semibold py-3.5 px-7 rounded-xl shadow-md transition-all text-sm group">
+                <i data-lucide="user-plus" class="w-4 h-4"></i>
+                <!-- Exact button copy -->
+                <span>Únete al equipo</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Column 2: ¿Qué tipo de personas buscamos? -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl bg-blue-50 text-brand-blueBtn flex items-center justify-center shrink-0">
+                <i data-lucide="shield-check" class="w-4 h-4"></i>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-serif font-bold text-brand-blueHeader">
+                ¿Qué tipo de personas buscamos?
+              </h3>
+            </div>
+
+            <!-- 5 Service Requirements (Exact Copy) -->
+            <div class="space-y-3.5">
+              
+              <div class="flex items-start gap-3.5 p-4 rounded-xl bg-brand-sand border border-brand-warmBorder">
+                <div class="w-6 h-6 rounded-lg bg-orange-100 text-brand-terracotta flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+                </div>
+                <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                  Personas dispuestas a servir a Cristo incondicionalmente y disponibles para un compromiso de largo plazo con los pueblos no alcanzados.
+                </p>
+              </div>
+
+              <div class="flex items-start gap-3.5 p-4 rounded-xl bg-brand-sand border border-brand-warmBorder">
+                <div class="w-6 h-6 rounded-lg bg-blue-100 text-brand-blueBtn flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+                </div>
+                <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                  Personas que tengan como enfoque supremo la gloria de Dios.
+                </p>
+              </div>
+
+              <div class="flex items-start gap-3.5 p-4 rounded-xl bg-brand-sand border border-brand-warmBorder">
+                <div class="w-6 h-6 rounded-lg bg-orange-100 text-brand-terracotta flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+                </div>
+                <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                  Discípulos que muestren en su vida los valores de Cristo.
+                </p>
+              </div>
+
+              <div class="flex items-start gap-3.5 p-4 rounded-xl bg-brand-sand border border-brand-warmBorder">
+                <div class="w-6 h-6 rounded-lg bg-blue-100 text-brand-blueBtn flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+                </div>
+                <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                  Profesionales, bilingües y sobre todo con capacidad para trabajar en equipo.
+                </p>
+              </div>
+
+              <div class="flex items-start gap-3.5 p-4 rounded-xl bg-brand-sand border border-brand-warmBorder">
+                <div class="w-6 h-6 rounded-lg bg-orange-100 text-brand-terracotta flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+                </div>
+                <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                  Expertos en los idiomas originales de la Biblia con espíritu de siervo.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 5. SECTION: CALL TO ACTION BANNER                                         -->
+  <!-- ========================================================================= -->
+  <section class="bg-brand-ivory py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="bg-gradient-to-r from-brand-navy via-brand-blueHeader to-brand-navy rounded-3xl p-8 sm:p-12 lg:p-16 shadow-2xl border border-white/10 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
+        <!-- Glows -->
+        <div class="absolute -top-24 -right-24 w-72 h-72 bg-brand-terracotta/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="space-y-4 max-w-2xl relative z-10">
+          <div class="inline-flex items-center gap-2 text-brand-terracottaLight text-xs font-bold tracking-widest uppercase mb-1">
+            <i data-lucide="globe" class="w-4 h-4"></i>
+            <span>La Gran Comisión</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white leading-tight">
+            Juntos podemos llevar la Palabra a cada pueblo
+          </h2>
+          <!-- Exact Copy -->
+          <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+            Tu participación, ya sea a través de la oración, donación o servicio, es fundamental para cumplir la Gran Comisión en los pueblos de Latinoamérica.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 shrink-0 relative z-10 w-full sm:w-auto">
+          <button id="openContactModalBtn4" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-brand-terracotta hover:bg-brand-terracottaHover text-white font-semibold py-4 px-8 rounded-xl shadow-lg transition-all group">
+            <i data-lucide="mail" class="w-5 h-5"></i>
+            <span>Contáctanos</span>
+          </button>
+          <button id="openDonateModalBtn4" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-8 rounded-xl border border-white/20 transition-all">
+            <i data-lucide="hand-helping" class="w-5 h-5 text-brand-terracottaLight"></i>
+            <span>Donar</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 6. FOOTER                                                                 -->
+  <!-- ========================================================================= -->
+  <footer class="bg-brand-navyDark text-gray-300 py-12 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center">
+        <img src="https://idiomaspuentes.org/_astro/logo-id-blanco.pUxQ_d_a_Z2lh9tR.svg" 
+             alt="Logo Idiomas Puentes" 
+             class="h-9 w-auto object-contain">
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-xs sm:text-sm text-gray-400 text-center">
+        © 2025 IdiomasPuentes. Todos los derechos reservados.
+      </div>
+
+      <!-- Social Link: Instagram -->
+      <div class="flex items-center gap-4">
+        <a href="https://www.instagram.com/idiomaspuentes/?igsh=MTE5cGk2Y2V3amRtMw%3D%3D#" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           aria-label="Instagram de Idiomas Puentes"
+           class="w-10 h-10 rounded-xl bg-white/5 hover:bg-brand-terracotta text-gray-300 hover:text-white flex items-center justify-center transition-all">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: DONA DE FORMA SEGURA                                               -->
+  <!-- ========================================================================= -->
+  <div id="donateModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-backdrop transition-opacity">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-gray-100 relative card-hover">
+      <button id="closeDonateModalBtn" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 p-2 rounded-full hover:bg-gray-100">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="text-center space-y-4">
+        <div class="w-14 h-14 rounded-2xl bg-orange-50 text-brand-terracotta flex items-center justify-center mx-auto shadow-sm">
+          <i data-lucide="hand-helping" class="w-7 h-7"></i>
+        </div>
+        
+        <h3 class="text-2xl font-serif font-bold text-brand-blueHeader">
+          Dona de forma segura
+        </h3>
+        
+        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+          Al hacer clic al botón de donar serás redirigido a una página que te permitirá donar a Idiomas Puentes de manera segura.
+        </p>
+
+        <div class="pt-4 border-t border-gray-100">
+          <a href="https://www.myclickandgive.com/login.php?id=26&r=eyJtIjoiVGhhbmsgeW91IGZvciB5b3VyIGdpZnQhIiwiYSI6IjEyNTMiLCJ0IjoiZ2l2ZS5waHAifQ==" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="w-full inline-flex items-center justify-center gap-2 bg-brand-terracotta hover:bg-brand-terracottaHover text-white font-semibold py-4 px-6 rounded-xl shadow-md transition-all">
+            <span>Continuar a Donación Segura</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: ÚNETE CON NOSOTROS / CONTACTO                                      -->
+  <!-- ========================================================================= -->
+  <div id="contactModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-backdrop transition-opacity">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-gray-100 relative card-hover">
+      <button id="closeContactModalBtn" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 p-2 rounded-full hover:bg-gray-100">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="text-center space-y-4">
+        <div class="w-14 h-14 rounded-2xl bg-blue-50 text-brand-blueBtn flex items-center justify-center mx-auto shadow-sm">
+          <i data-lucide="users" class="w-7 h-7"></i>
+        </div>
+        
+        <h3 class="text-2xl font-serif font-bold text-brand-blueHeader">
+          Únete con Nosotros
+        </h3>
+        
+        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+          Idiomas Puentes representa una convergencia de la Iglesia Global, trabajando juntos para cumplir la Gran Comisión. Únete a este esfuerzo colaborativo para llevar la Palabra de Dios a cada idioma.
+        </p>
+
+        <div class="pt-4 border-t border-gray-100 space-y-3">
+          <a href="mailto:info@idiomaspuentes.org" class="w-full inline-flex items-center justify-center gap-2 bg-brand-blueBtn hover:bg-brand-blueHover text-white font-semibold py-3.5 px-6 rounded-xl shadow-md transition-all">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>Contáctanos Directamente</span>
+          </a>
+          <button id="closeContactModalBtn2" class="w-full text-xs text-gray-400 hover:text-gray-600 py-2">
+            Cerrar ventana
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Scripts for Interactions & Icons -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Menu
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // Dynamic Header Elevation
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header.classList.add('py-1');
+      } else {
+        header.classList.remove('py-1');
+      }
+    });
+
+    // Donate Modal
+    const donateModal = document.getElementById('donateModal');
+    const openDonateBtns = [
+      document.getElementById('openDonateModalBtn'),
+      document.getElementById('openDonateModalBtn2'),
+      document.getElementById('openDonateModalBtn4'),
+      document.getElementById('mobileDonateBtn')
+    ];
+    const closeDonateBtn = document.getElementById('closeDonateModalBtn');
+
+    openDonateBtns.forEach(btn => {
+      if (btn) {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          donateModal.classList.remove('hidden');
+        });
+      }
+    });
+    if (closeDonateBtn) {
+      closeDonateBtn.addEventListener('click', () => {
+        donateModal.classList.add('hidden');
+      });
+    }
+
+    // Contact Modal
+    const contactModal = document.getElementById('contactModal');
+    const openContactBtns = [
+      document.getElementById('navContactBtn'),
+      document.getElementById('mobileContactBtn'),
+      document.getElementById('openContactModalBtn2'),
+      document.getElementById('openContactModalBtn4')
+    ];
+    const closeContactBtns = [
+      document.getElementById('closeContactModalBtn'),
+      document.getElementById('closeContactModalBtn2')
+    ];
+
+    openContactBtns.forEach(btn => {
+      if (btn) {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          contactModal.classList.remove('hidden');
+        });
+      }
+    });
+    closeContactBtns.forEach(btn => {
+      if (btn) {
+        btn.addEventListener('click', () => {
+          contactModal.classList.add('hidden');
+        });
+      }
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === donateModal) donateModal.classList.add('hidden');
+      if (e.target === contactModal) contactModal.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
