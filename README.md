@@ -1,5 +1,8 @@
 # Rediseño Completo del Sitio Web: Idiomas Puentes (idiomaspuentes.org)
 
+> 🚀 **Sitio en Vivo (GitHub Pages)**: [https://elishaherrera.github.io/idiomaspuentes-redesign/](https://elishaherrera.github.io/idiomaspuentes-redesign/)  
+> 📦 **Repositorio GitHub**: [https://github.com/Elishaherrera/idiomaspuentes-redesign](https://github.com/Elishaherrera/idiomaspuentes-redesign)
+
 Este repositorio contiene el rediseño integral de todas las páginas del sitio web oficial de **[Idiomas Puentes](https://idiomaspuentes.org)**, desarrollado con una arquitectura visual moderna, limpia, responsiva y de estándar editorial internacional, **sin alterar ninguna palabra o información del sitio original** y respetando estrictamente **la paleta de colores institucional**.
 
 ---
